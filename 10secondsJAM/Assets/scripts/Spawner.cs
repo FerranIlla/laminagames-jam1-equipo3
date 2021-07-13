@@ -6,23 +6,20 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
     float timeToNextSpawn;
-    float spawnRateInSeconds = 2f;
+    [SerializeField] float spawnRateInSeconds = 2f;
+    [SerializeField] private EnemiesManager enemiesManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SpawnNewEnemy();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(timeToNextSpawn >= spawnRateInSeconds)
-        {
-            SpawnNewEnemy();
-            timeToNextSpawn = 0f;
-        }
-        timeToNextSpawn += Time.deltaTime;
+        SpawnEnemyByTime(spawnRateInSeconds);
+        
     }
 
     void SpawnNewEnemy()
@@ -31,6 +28,20 @@ public class Spawner : MonoBehaviour
         GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         Enemy e = enemy.GetComponent<Enemy>();
         e.SetEmptyVariables_SafetyCheck();
-        e.PrintEnemyData();
+        //e.PrintEnemyData();
+
+        //add it to a list to keep track of it
+        enemiesManager.AddEnemySpawnedToList(e);
     }
+
+    void SpawnEnemyByTime(float time)
+    {
+        if (timeToNextSpawn >= time)
+        {
+            SpawnNewEnemy();
+            timeToNextSpawn = 0f;
+        }
+        timeToNextSpawn += Time.deltaTime;
+    }
+
 }

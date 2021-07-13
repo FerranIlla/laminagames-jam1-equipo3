@@ -3,20 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyType { None, Green, Blue, Yellow, Red}
+public enum EnemyType { None, Red, Green, Blue, Yellow}
 
 public class Enemy : MonoBehaviour
 {
 
-    EnemyType type = EnemyType.None;
+    [HideInInspector] public EnemyType type = EnemyType.None;
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private float minSpeed = 0.5f;
     [SerializeField] private float maxSpeed = 1f;
+    [HideInInspector] public int health;
 
     // Start is called before the first frame update
     void Start()
     {
         SetEmptyVariables_SafetyCheck();
+        //change color
+        Debug_SetColorByType(type);
     }
 
     // Update is called once per frame
@@ -26,6 +29,11 @@ public class Enemy : MonoBehaviour
 
         
 
+    }
+
+    void SetHealth(int healthValue)
+    {
+        health = healthValue;
     }
 
     void SetType(EnemyType typeToSet)
@@ -56,15 +64,11 @@ public class Enemy : MonoBehaviour
 
     public void SetEmptyVariables_SafetyCheck()
     {
-        if(type == EnemyType.None)
-        {
-            SetRandomType();
-        }
+        if(type == EnemyType.None) SetRandomType();
 
-        if(moveSpeed == 0f)
-        {
-            SetRandomMoveSpeed(minSpeed, maxSpeed);
-        }
+        if(moveSpeed == 0f) SetRandomMoveSpeed(minSpeed, maxSpeed);
+
+        if (health == 0) SetHealth(1);
     }
 
     public void PrintEnemyData()
@@ -73,21 +77,28 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy falling speed: " + moveSpeed);
     }
 
-    void ReachFloor()
+    public void DeleteObject()
     {
-        //destroy object
-        //trigger animation
-        //do damage
-        //sound
-        //etc
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Debug_SetColorByType(EnemyType type)
     {
-        if(other.tag == "Finish")
+        switch (type)
         {
-            ReachFloor();
+            case EnemyType.Red:
+                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+                break;
+            case EnemyType.Green:
+                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
+                break;
+            case EnemyType.Blue:
+                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.blue;
+                break;
+            case EnemyType.Yellow:
+                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.yellow;
+                break;
         }
     }
+    
 }
