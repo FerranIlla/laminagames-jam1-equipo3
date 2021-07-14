@@ -8,6 +8,13 @@ public class GameFlowManager : MonoBehaviour
 {
 
     [HideInInspector]public GameState gameState;
+    [Tooltip("If true, victory is achieved by surviving 'secondsToSurvive' time. Otherwise, it is achieved by killing 'enemiesToKill' number of enemies.")]
+    public bool victoryByTime = true; //otherwise, victory by balloons poped.
+    public float secondsToSurvive = 90; //inSeconds
+    public int enemiesToKill = 30;
+    private float timeSurvived = 0;
+    private int enemiesKilled = 0;
+
 
     //all manager references
     [SerializeField] private EnemiesManager enemiesManager;
@@ -23,7 +30,33 @@ public class GameFlowManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckVictoryCondition();
+    }
+
+    private void CheckVictoryCondition()
+    {
+        if (victoryByTime)
+        {
+            if (timeSurvived >= secondsToSurvive)
+            {
+                //win
+                VictoryEvent();
+            }
+            timeSurvived += Time.deltaTime;
+        }
+        else
+        {
+            if(enemiesKilled >= enemiesToKill)
+            {
+                //win
+                VictoryEvent();
+            }
+        }
+    }
+
+    public void AddEnemiesKilledToCount(int numberOfEnemiesKilled)
+    {
+        enemiesKilled += numberOfEnemiesKilled;
     }
 
     public void DefeatEvent()

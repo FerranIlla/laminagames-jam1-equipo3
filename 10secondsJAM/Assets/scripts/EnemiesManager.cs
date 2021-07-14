@@ -9,20 +9,21 @@ public class EnemiesManager : MonoBehaviour
     [HideInInspector] public List<Enemy> enemiesBlue = new List<Enemy>();
     [HideInInspector] public List<Enemy> enemiesYellow = new List<Enemy>();
 
+    private GameFlowManager gameFlowManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameFlowManager = GameObject.FindWithTag("GameController").GetComponent<GameFlowManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PrintListsSize();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    PrintListsSize();
+        //}
     }
 
     public void AddEnemySpawnedToList(Enemy enemySpawned)
@@ -47,6 +48,40 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Deletes an enemy without adding it to the kill count.
+    /// </summary>
+    /// <param name="enemyToDelete"></param>
+    public void DeleteOneEnemy(Enemy enemyToDelete)
+    {
+        switch (enemyToDelete.type)
+        {
+            case EnemyType.Red:
+                enemiesRed.Remove(enemyToDelete);
+                enemyToDelete.DeleteObject();
+                break;
+            case EnemyType.Green:
+                enemiesGreen.Remove(enemyToDelete);
+                enemyToDelete.DeleteObject();
+                break;
+            case EnemyType.Blue:
+                enemiesBlue.Remove(enemyToDelete);
+                enemyToDelete.DeleteObject();
+                break;
+            case EnemyType.Yellow:
+                enemiesYellow.Remove(enemyToDelete);
+                enemyToDelete.DeleteObject();
+                break;
+            default:
+                Debug.LogWarning("Not a known enemy type.");
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Deletes an enemy and adds 1 to the kill count.
+    /// </summary>
+    /// <param name="enemyKilled"></param>
     public void KillOneEnemy(Enemy enemyKilled)
     {
         switch (enemyKilled.type)
@@ -71,10 +106,14 @@ public class EnemiesManager : MonoBehaviour
                 Debug.LogWarning("Not a known enemy type.");
                 break;
         }
+        gameFlowManager.AddEnemiesKilledToCount(1);
+
     }
 
     private void KillAllEnemiesFromList(List<Enemy> enemiesList)
     {
+        gameFlowManager.AddEnemiesKilledToCount(enemiesList.Count);
+
         for(int i = enemiesList.Count-1; i >= 0; i--)
         {
             Enemy e = enemiesList[i];

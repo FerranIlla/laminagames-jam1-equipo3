@@ -37,7 +37,7 @@ public class Floor : MonoBehaviour
             //feedback/animation/sound
             livesVisualizer.RecalculateVisualizer(lives);
 
-            enemiesManager.KillOneEnemy(e);
+            enemiesManager.DeleteOneEnemy(e);
         }
     }
 }
