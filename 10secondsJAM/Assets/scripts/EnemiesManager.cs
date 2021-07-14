@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
-    [HideInInspector] public List<Enemy> enemiesA = new List<Enemy>();
-    [HideInInspector] public List<Enemy> enemiesB = new List<Enemy>();
-    [HideInInspector] public List<Enemy> enemiesC = new List<Enemy>();
-    [HideInInspector] public List<Enemy> enemiesD = new List<Enemy>();
+    [HideInInspector] public List<Enemy> enemiesRed = new List<Enemy>();
+    [HideInInspector] public List<Enemy> enemiesGreen = new List<Enemy>();
+    [HideInInspector] public List<Enemy> enemiesBlue = new List<Enemy>();
+    [HideInInspector] public List<Enemy> enemiesYellow = new List<Enemy>();
 
 
     // Start is called before the first frame update
@@ -30,16 +30,16 @@ public class EnemiesManager : MonoBehaviour
         switch (enemySpawned.type)
         {
             case EnemyType.Red:
-                enemiesA.Add(enemySpawned);
+                enemiesRed.Add(enemySpawned);
                 break;
             case EnemyType.Green:
-                enemiesB.Add(enemySpawned);
+                enemiesGreen.Add(enemySpawned);
                 break;
             case EnemyType.Blue:
-                enemiesC.Add(enemySpawned);
+                enemiesBlue.Add(enemySpawned);
                 break;
             case EnemyType.Yellow:
-                enemiesD.Add(enemySpawned);
+                enemiesYellow.Add(enemySpawned);
                 break;
             default:
                 Debug.LogWarning("Not a known enemy type.");
@@ -52,19 +52,19 @@ public class EnemiesManager : MonoBehaviour
         switch (enemyKilled.type)
         {
             case EnemyType.Red:
-                enemiesA.Remove(enemyKilled);
+                enemiesRed.Remove(enemyKilled);
                 enemyKilled.DeleteObject();
                 break;
             case EnemyType.Green:
-                enemiesB.Remove(enemyKilled);
+                enemiesGreen.Remove(enemyKilled);
                 enemyKilled.DeleteObject();
                 break;
             case EnemyType.Blue:
-                enemiesC.Remove(enemyKilled);
+                enemiesBlue.Remove(enemyKilled);
                 enemyKilled.DeleteObject();
                 break;
             case EnemyType.Yellow:
-                enemiesD.Remove(enemyKilled);
+                enemiesYellow.Remove(enemyKilled);
                 enemyKilled.DeleteObject();
                 break;
             default:
@@ -83,21 +83,29 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+    public void KillAllEnemies()
+    {
+        KillAllEnemiesFromList(enemiesRed);
+        KillAllEnemiesFromList(enemiesGreen);
+        KillAllEnemiesFromList(enemiesBlue);
+        KillAllEnemiesFromList(enemiesYellow);
+    }
+
     public void HitAllEnemiesOfType(EnemyType enemyType)
     {
         switch (enemyType)
         {
             case EnemyType.Red:
-                KillAllEnemiesFromList(enemiesA);
+                KillAllEnemiesFromList(enemiesRed);
                 break;
             case EnemyType.Green:
-                KillAllEnemiesFromList(enemiesB);
+                KillAllEnemiesFromList(enemiesGreen);
                 break;
             case EnemyType.Blue:
-                KillAllEnemiesFromList(enemiesC);
+                KillAllEnemiesFromList(enemiesBlue);
                 break;
             case EnemyType.Yellow:
-                KillAllEnemiesFromList(enemiesD);
+                KillAllEnemiesFromList(enemiesYellow);
                 break;
             default:
                 Debug.LogWarning("Not a known enemy type.");
@@ -105,8 +113,10 @@ public class EnemiesManager : MonoBehaviour
         }
     }
 
+
+
     void PrintListsSize()
     {
-        Debug.Log("Number of enemies per type. R= " + enemiesA.Count + " G= " + enemiesB.Count + " B= " + enemiesC.Count + " Y= " + enemiesD.Count);
+        Debug.Log("Number of enemies per type. R= " + enemiesRed.Count + " G= " + enemiesGreen.Count + " B= " + enemiesBlue.Count + " Y= " + enemiesYellow.Count);
     }
 }

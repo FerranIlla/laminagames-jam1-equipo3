@@ -6,7 +6,8 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemyPrefab;
     float timeToNextSpawn;
-    [SerializeField] float spawnRateInSeconds = 2f;
+    bool keepSpawning = true;
+    [SerializeField] private float spawnRateInSeconds = 2f;
     [SerializeField] private EnemiesManager enemiesManager;
 
     // Start is called before the first frame update
@@ -18,7 +19,11 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemyByTime(spawnRateInSeconds);
+        if (keepSpawning)
+        {
+            SpawnEnemyByTime(spawnRateInSeconds);
+        }
+        
         
     }
 
@@ -44,4 +49,8 @@ public class Spawner : MonoBehaviour
         timeToNextSpawn += Time.deltaTime;
     }
 
+    public void StopSpawning()
+    {
+        keepSpawning = false;
+    }
 }
