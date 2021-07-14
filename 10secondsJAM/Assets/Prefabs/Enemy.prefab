@@ -368,7 +368,8 @@ GameObject:
   - component: {fileID: 1211573400895326402}
   - component: {fileID: 1449660654}
   - component: {fileID: 6824575088007593501}
-  m_Layer: 0
+  - component: {fileID: 8812866207761946300}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -437,3 +438,22 @@ MonoBehaviour:
   rotationCenter: {fileID: 4900685934180414398}
   oscillationSpeed: 1
   maxAngle: 15
+--- !u!95 &8812866207761946300
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011271415172682549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d87b3618be0030544b38822fe90cf0de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

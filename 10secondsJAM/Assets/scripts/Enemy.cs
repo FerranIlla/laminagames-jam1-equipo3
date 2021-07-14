@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private float minSpeed = 0.5f;
     [SerializeField] private float maxSpeed = 1f;
-    [HideInInspector] public int health;
+    [HideInInspector] public float health;
+
+    EnemyAnimation enemyAnimation;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class Enemy : MonoBehaviour
         SetEmptyVariables_SafetyCheck();
         //change color
         Debug_SetColorByType(type);
+
+        enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void SetHealth(int healthValue)
+    void SetHealth(float healthValue)
     {
         health = healthValue;
     }
@@ -62,13 +66,33 @@ public class Enemy : MonoBehaviour
         transform.Translate(new Vector3(0f, -moveSpeed * Time.deltaTime, 0f));
     }
 
+    /// <summary>
+    /// deal damage to this enemy and returns if it died
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <returns></returns>
+    public bool GetHit(float damage)
+    {
+        //trigger animation
+        enemyAnimation.TriggerHitAnimation();
+
+        //health
+        health -= damage;
+        if(health <= 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void SetEmptyVariables_SafetyCheck()
     {
         if(type == EnemyType.None) SetRandomType();
 
         if(moveSpeed == 0f) SetRandomMoveSpeed(minSpeed, maxSpeed);
 
-        if (health == 0) SetHealth(1);
+        if (health == 0) SetHealth(100f);
     }
 
     public void PrintEnemyData()
