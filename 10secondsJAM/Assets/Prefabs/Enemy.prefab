@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104056494334467477}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.1375971, w: 0.9904883}
   m_LocalPosition: {x: -0.306, y: -0.646, z: 0.001}
   m_LocalScale: {x: 0.024743386, y: 0.89072, z: 0.024495147}
   m_Children: []
   m_Father: {fileID: 4316860035292259699}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.818}
 --- !u!33 &7081333672686629596
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -81,6 +81,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1314193271681601885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4900685934180414398}
+  m_Layer: 0
+  m_Name: rotation center for fall animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4900685934180414398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314193271681601885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4556630357805754928}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811634067842567996
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,13 +300,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2894140345820962987}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.13639998, w: 0.99065393}
   m_LocalPosition: {x: 0.303, y: -0.646, z: 0.001}
   m_LocalScale: {x: 0.024743386, y: 0.89072, z: 0.024495147}
   m_Children: []
   m_Father: {fileID: 4316860035292259699}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.679}
 --- !u!33 &2795166543406304483
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -337,6 +367,7 @@ GameObject:
   - component: {fileID: 4556630357805754928}
   - component: {fileID: 1211573400895326402}
   - component: {fileID: 1449660654}
+  - component: {fileID: 6824575088007593501}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -357,6 +388,7 @@ Transform:
   m_Children:
   - {fileID: 4316860035292259699}
   - {fileID: 6697930230472696255}
+  - {fileID: 4900685934180414398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -389,3 +421,19 @@ MonoBehaviour:
   moveSpeed: 0
   minSpeed: 0.1
   maxSpeed: 1
+  health: 0
+--- !u!114 &6824575088007593501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011271415172682549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8110d43fa5df84141a4a2440bc190c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationCenter: {fileID: 4900685934180414398}
+  oscillationSpeed: 1
+  maxAngle: 15
