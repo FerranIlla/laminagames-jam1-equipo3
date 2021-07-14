@@ -13,11 +13,16 @@ public class EnemyAnimation : MonoBehaviour
     [Range(0,90)][SerializeField]
     private float maxAngle = 15f;
 
+    //hit feedback
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rotationAxis = Vector3.back; //z world axis I think
         angleOffset = Random.Range(0, 360) * Mathf.Deg2Rad;
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,5 +52,10 @@ public class EnemyAnimation : MonoBehaviour
         rotationValue = t * maxAngle;
         
         return rotationValue;
+    }
+
+    public void TriggerHitAnimation()
+    {
+        animator.SetTrigger("EnemyHit");
     }
 }
