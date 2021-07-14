@@ -19,9 +19,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetEmptyVariables_SafetyCheck();
-        //change color
-        Debug_SetColorByType(type);
+        SetRandomMoveSpeed(minSpeed, maxSpeed);
+        SetHealth(100f);
 
         enemyAnimation = GetComponent<EnemyAnimation>();
     }
@@ -40,20 +39,10 @@ public class Enemy : MonoBehaviour
         health = healthValue;
     }
 
-    void SetType(EnemyType typeToSet)
-    {
-        type = typeToSet;
-    }
-
     void SetRandomType()
     {
         int randomNumber = UnityEngine.Random.Range(1, Enum.GetNames(typeof(EnemyType)).Length);
         type = (EnemyType)randomNumber;
-    }
-
-    void SetMoveSpeed(float speed)
-    {
-        moveSpeed = speed;
     }
 
     void SetRandomMoveSpeed(float minSpeed, float maxSpeed)
@@ -86,15 +75,6 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
-    public void SetEmptyVariables_SafetyCheck()
-    {
-        if(type == EnemyType.None) SetRandomType();
-
-        if(moveSpeed == 0f) SetRandomMoveSpeed(minSpeed, maxSpeed);
-
-        if (health == 0) SetHealth(100f);
-    }
-
     public void PrintEnemyData()
     {
         Debug.Log("Enemy of type " + type.ToString());
@@ -104,25 +84,6 @@ public class Enemy : MonoBehaviour
     public void DeleteObject()
     {
         Destroy(gameObject);
-    }
-
-    private void Debug_SetColorByType(EnemyType type)
-    {
-        switch (type)
-        {
-            case EnemyType.Red:
-                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
-                break;
-            case EnemyType.Green:
-                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
-                break;
-            case EnemyType.Blue:
-                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.blue;
-                break;
-            case EnemyType.Yellow:
-                transform.GetChild(0).GetComponent<Renderer>().material.color = Color.yellow;
-                break;
-        }
     }
     
 }

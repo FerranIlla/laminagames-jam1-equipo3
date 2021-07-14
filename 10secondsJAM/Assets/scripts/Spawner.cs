@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private List<GameObject> enemyPrefabs = new List<GameObject>();
+    [SerializeField] private List<GameObject> balloonPrefabs = new List<GameObject>();
     float timeToNextSpawn;
     bool keepSpawning = true;
     [SerializeField] private float spawnRateInSeconds = 2f;
@@ -30,9 +31,14 @@ public class Spawner : MonoBehaviour
     void SpawnNewEnemy()
     {
         Vector3 spawnPosition = new Vector3(Random.Range(-5f, 5f), 11f, 0f);
-        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+        int randomEnemy = Random.Range(0, enemyPrefabs.Count);
+        GameObject enemy = Instantiate(enemyPrefabs[randomEnemy], spawnPosition, Quaternion.identity);
+        int randomBalloon = Random.Range(0, balloonPrefabs.Count);
+        Instantiate(balloonPrefabs[randomBalloon], enemy.transform.GetChild(0));
+        
         Enemy e = enemy.GetComponent<Enemy>();
-        e.SetEmptyVariables_SafetyCheck();
+        e.type = (EnemyType)(randomBalloon + 1);
         //e.PrintEnemyData();
 
         //add it to a list to keep track of it
