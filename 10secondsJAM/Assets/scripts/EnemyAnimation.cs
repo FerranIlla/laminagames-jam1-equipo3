@@ -15,6 +15,9 @@ public class EnemyAnimation : MonoBehaviour
 
     //hit feedback
     Animator animator;
+    float maxSize = 3.221664f;
+    float minSize = 1.221664f;
+    float scaleIncrease = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,19 @@ public class EnemyAnimation : MonoBehaviour
         rotationValue = t * maxAngle;
         
         return rotationValue;
+    }
+
+    public void IncreaseSize(float maxHealth, float currentHealth)
+    {
+        
+        //calculate new size value
+        float a1 = maxHealth, a2 = 0; //first range
+        float b1 = minSize, b2 = maxSize; //second range
+        float s = currentHealth; //value in first range
+        float t; //value remapped
+
+        t = b1 + (s - a1) * (b2 - b1) / (a2 - a1);
+        transform.GetChild(0).GetChild(0).localScale = new Vector3(t, t, t); 
     }
 
     public void TriggerHitAnimation()
