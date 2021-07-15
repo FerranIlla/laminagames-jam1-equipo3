@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float minSpeed = 0.5f;
     [SerializeField] private float maxSpeed = 1f;
     [HideInInspector] public float health;
+    [HideInInspector] public float startingHealth;
+
 
     EnemyAnimation enemyAnimation;
 
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
     void SetHealth(float healthValue)
     {
         health = healthValue;
+        startingHealth = health;
     }
 
     void SetRandomType()
@@ -62,6 +65,8 @@ public class Enemy : MonoBehaviour
     /// <returns></returns>
     public bool GetHit(float damage)
     {
+        //make bigger permanently
+        enemyAnimation.IncreaseSize(startingHealth, health);
         //trigger animation
         enemyAnimation.TriggerHitAnimation();
 
