@@ -27,4 +27,8 @@ public class UIController : MonoBehaviour
         public static void PanelD(GameObject Desactivacion){
         Desactivacion.SetActive(false);
     }
+
+    public static void Salir(){
+         Application.Quit();
+    } 
 }
