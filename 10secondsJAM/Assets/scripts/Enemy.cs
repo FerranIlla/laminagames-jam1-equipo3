@@ -98,7 +98,7 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(confetti,transform.position,Quaternion.identity);
         Destroy(gameObject);
-        AudioManager.instance.PlaySoundAdditive("BalloonSpawn");
+        AudioManager.instance.PlaySound("BalloonSpawn");
     }
 
     public void DeleteObjectWithoutConfetti()

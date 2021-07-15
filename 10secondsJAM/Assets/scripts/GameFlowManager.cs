@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum GameState { Presentation, Gameplay, Defeat, Victory}
 
@@ -20,6 +23,11 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private EnemiesManager enemiesManager;
     [SerializeField] private Spawner enemySpawner;
 
+    //HUD
+    [SerializeField]
+    private TMP_Text timer;
+    [SerializeField]  private Button back_Btn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +40,7 @@ public class GameFlowManager : MonoBehaviour
     void Update()
     {
         CheckVictoryCondition();
+        if(gameState == GameState.Gameplay) UpdateTimer();
     }
 
     private void CheckVictoryCondition()
@@ -69,6 +78,8 @@ public class GameFlowManager : MonoBehaviour
             gameState = GameState.Defeat;
             //enemySpawner.StopSpawning();
             //enemiesManager.KillAllEnemies();
+            back_Btn.gameObject.SetActive(true);
+            timer.gameObject.SetActive(false);
         }
     }
 
@@ -81,6 +92,18 @@ public class GameFlowManager : MonoBehaviour
             gameState = GameState.Victory;
             enemySpawner.StopSpawning();
             enemiesManager.KillAllEnemies();
+            back_Btn.gameObject.SetActive(true);
         }
+    }
+
+    void UpdateTimer()
+    {
+        int time = (int)(secondsToSurvive - timeSurvived);
+        timer.text = "Time : " + time;
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("UI_Secene");
     }
 }
