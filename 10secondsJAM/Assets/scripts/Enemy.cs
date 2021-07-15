@@ -14,9 +14,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float maxSpeed = 1f;
     [HideInInspector] public float health;
     [HideInInspector] public float startingHealth;
-
-
+    
     EnemyAnimation enemyAnimation;
+
+    //particle systems
+    [SerializeField]
+    private ParticleSystem confetti;
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +90,12 @@ public class Enemy : MonoBehaviour
     }
 
     public void DeleteObject()
+    {
+        Instantiate(confetti,transform.position,Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    public void DeleteObjectWithoutConfetti()
     {
         Destroy(gameObject);
     }

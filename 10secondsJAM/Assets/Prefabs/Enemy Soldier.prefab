@@ -98,6 +98,7 @@ MonoBehaviour:
   maxSpeed: 1
   health: 0
   startingHealth: 0
+  confetti: {fileID: 4797698496713387316, guid: 3d9125a57dad4f942baac0bb39a04154, type: 3}
 --- !u!114 &5511820810990788092
 MonoBehaviour:
   m_ObjectHideFlags: 0

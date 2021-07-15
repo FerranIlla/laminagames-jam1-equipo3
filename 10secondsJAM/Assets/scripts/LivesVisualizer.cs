@@ -28,7 +28,8 @@ public class LivesVisualizer : MonoBehaviour
     {
         //change Ui, background or whatever display it is, by the current lives
         //DebugVisualizer(lives);
-        CastlesDisplay(lives);
+        //CastlesDisplay(lives);
+        LooseOneCastle(lives);
     }
 
     private void CastlesDisplay(int lives)
@@ -46,6 +47,19 @@ public class LivesVisualizer : MonoBehaviour
             castlesUp[castleIndex].SetActive(condition);
             castlesDown[castleIndex].SetActive(!condition);
         }
+    }
+
+    private void LooseOneCastle(int lives)
+    {
+        if (lives >= castlesUp.Count)
+        {
+            Debug.LogWarning("Error, there are more lives than castles.");
+            return;
+        }
+        int index = castleDestructionOrder.Count - lives - 1;
+        castlesUp[index].SetActive(false);
+        castlesDown[index].SetActive(true);
+        Instantiate(floor.sandExplosion, castlesDown[index].transform.position, Quaternion.identity);
     }
 
     private void DebugVisualizer(int lives)

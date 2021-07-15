@@ -65,8 +65,8 @@ public class GameFlowManager : MonoBehaviour
         {
             Debug.Log("You are defeated! :_(");
             gameState = GameState.Defeat;
-            enemySpawner.StopSpawning();
-            enemiesManager.KillAllEnemies();
+            //enemySpawner.StopSpawning();
+            //enemiesManager.KillAllEnemies();
         }
     }
 

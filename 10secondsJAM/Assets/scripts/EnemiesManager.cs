@@ -58,19 +58,19 @@ public class EnemiesManager : MonoBehaviour
         {
             case EnemyType.Red:
                 enemiesRed.Remove(enemyToDelete);
-                enemyToDelete.DeleteObject();
+                enemyToDelete.DeleteObjectWithoutConfetti();
                 break;
             case EnemyType.Green:
                 enemiesGreen.Remove(enemyToDelete);
-                enemyToDelete.DeleteObject();
+                enemyToDelete.DeleteObjectWithoutConfetti();
                 break;
             case EnemyType.Blue:
                 enemiesBlue.Remove(enemyToDelete);
-                enemyToDelete.DeleteObject();
+                enemyToDelete.DeleteObjectWithoutConfetti();
                 break;
             case EnemyType.Yellow:
                 enemiesYellow.Remove(enemyToDelete);
-                enemyToDelete.DeleteObject();
+                enemyToDelete.DeleteObjectWithoutConfetti();
                 break;
             default:
                 Debug.LogWarning("Not a known enemy type.");
