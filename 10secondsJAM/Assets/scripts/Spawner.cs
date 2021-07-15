@@ -15,6 +15,8 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         //SpawnNewEnemy();
+        FirstSpawn();
+        FirstSpawn();
     }
 
     // Update is called once per frame
@@ -43,6 +45,8 @@ public class Spawner : MonoBehaviour
 
         //add it to a list to keep track of it
         enemiesManager.AddEnemySpawnedToList(e);
+
+        
     }
 
     void SpawnEnemyByTime(float time)
@@ -58,5 +62,22 @@ public class Spawner : MonoBehaviour
     public void StopSpawning()
     {
         keepSpawning = false;
+    }
+
+    private void FirstSpawn()
+    {
+        Vector3 spawnPosition = new Vector3(Random.Range(-5f, 5f), 11f, 0f);
+
+        int randomEnemy = Random.Range(0, enemyPrefabs.Count);
+        GameObject enemy = Instantiate(enemyPrefabs[randomEnemy], spawnPosition, Quaternion.identity);
+        int randomBalloon = Random.Range(0, balloonPrefabs.Count);
+        Instantiate(balloonPrefabs[randomBalloon], enemy.transform.GetChild(0));
+
+        Enemy e = enemy.GetComponent<Enemy>();
+        e.type = (EnemyType)(randomBalloon + 1);
+        e.SetMoveSpeed(Random.Range(0.8f, 1f));
+
+        //add it to a list to keep track of it
+        enemiesManager.AddEnemySpawnedToList(e);
     }
 }

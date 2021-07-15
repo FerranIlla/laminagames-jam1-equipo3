@@ -60,6 +60,8 @@ public class LivesVisualizer : MonoBehaviour
         castlesUp[index].SetActive(false);
         castlesDown[index].SetActive(true);
         Instantiate(floor.sandExplosion, castlesDown[index].transform.position, Quaternion.identity);
+        
+        AudioManager.instance.PlaySoundAdditive("CastleBreaks");
     }
 
     private void DebugVisualizer(int lives)

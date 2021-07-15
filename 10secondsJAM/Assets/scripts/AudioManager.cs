@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -43,5 +44,31 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
 
 
+    }
+
+    public void PlaySoundAdditive(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found");
+            return;
+        }
+
+        Sound newSound = new Sound();
+        newSound.source = gameObject.AddComponent<AudioSource>();
+        newSound.source.clip = s.clip;
+
+        newSound.source.volume = s.volume;
+        newSound.source.pitch = s.pitch;
+
+        newSound.source.Play();
+        StartCoroutine(DestroyAudioSource(newSound));
+    }
+
+    IEnumerator DestroyAudioSource (Sound sound)
+    {
+        yield return new WaitForSeconds(4f);
+        Destroy(sound.source);
     }
 }

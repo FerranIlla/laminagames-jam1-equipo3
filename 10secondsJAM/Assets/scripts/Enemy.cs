@@ -56,6 +56,11 @@ public class Enemy : MonoBehaviour
         moveSpeed = UnityEngine.Random.Range(minSpeed, maxSpeed);
     }
 
+    public void SetMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
+
     void MoveEnemy()
     {
         transform.Translate(new Vector3(0f, -moveSpeed * Time.deltaTime, 0f));
@@ -93,6 +98,7 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(confetti,transform.position,Quaternion.identity);
         Destroy(gameObject);
+        AudioManager.instance.PlaySoundAdditive("BalloonSpawn");
     }
 
     public void DeleteObjectWithoutConfetti()

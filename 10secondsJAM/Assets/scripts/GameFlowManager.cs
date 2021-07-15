@@ -25,6 +25,7 @@ public class GameFlowManager : MonoBehaviour
     {
         //Set first game state
         gameState = GameState.Gameplay;
+        AudioManager.instance.PlaySound("BattleMusic");
     }
 
     // Update is called once per frame
@@ -64,6 +65,7 @@ public class GameFlowManager : MonoBehaviour
         if (gameState == GameState.Gameplay)
         {
             Debug.Log("You are defeated! :_(");
+            AudioManager.instance.PlaySound("Defeat");
             gameState = GameState.Defeat;
             //enemySpawner.StopSpawning();
             //enemiesManager.KillAllEnemies();
@@ -75,6 +77,7 @@ public class GameFlowManager : MonoBehaviour
         if (gameState == GameState.Gameplay)
         {
             Debug.Log("You are victorious! :D");
+            AudioManager.instance.PlaySound("Victory");
             gameState = GameState.Victory;
             enemySpawner.StopSpawning();
             enemiesManager.KillAllEnemies();

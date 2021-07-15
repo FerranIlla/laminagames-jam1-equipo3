@@ -62,5 +62,6 @@ public class Ability : MonoBehaviour
         cooldownDisplay.gameObject.SetActive(true);
         button.interactable = false;
 
+        AudioManager.instance.PlaySoundAdditive("UseAbility");
     }
 }

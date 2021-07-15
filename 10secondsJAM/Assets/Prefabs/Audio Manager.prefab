@@ -43,4 +43,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e310f608ce4c340b6da9889dc4f7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: TextBox
+    clip: {fileID: 8300000, guid: aa7e4a7eb79afeb4f91551fbcc486ea7, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 2a7af6584b35340469238dad24226169, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: BalloonSpawn
+    clip: {fileID: 8300000, guid: 9b1b9f64796afca49acc70819affb417, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: UseAbility
+    clip: {fileID: 8300000, guid: c238e98b2e1f84441b97e6460625c659, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: Accept
+    clip: {fileID: 8300000, guid: afe1bbf114c2d0e4c86f9d827e65abc4, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: BattleMusic
+    clip: {fileID: 8300000, guid: 701dd0115072a9f4cb2afa693106829d, type: 3}
+    volume: 0.08
+    pitch: 1
+    source: {fileID: 0}
+  - name: CastleBreaks
+    clip: {fileID: 8300000, guid: 60a4814678347cd4eaecb16be1769d0b, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: Defeat
+    clip: {fileID: 8300000, guid: 4e8a1ec6455288b4baafd1257d7b7f2b, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
