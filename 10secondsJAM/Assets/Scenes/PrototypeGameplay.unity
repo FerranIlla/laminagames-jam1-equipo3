@@ -358,6 +358,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 046396f0a03c92349af26b5da85c91a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 046396f0a03c92349af26b5da85c91a5, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_1
@@ -443,8 +447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -143.54138}
-  m_SizeDelta: {x: 0, y: -287.08276}
+  m_AnchoredPosition: {x: 0, y: -104.24621}
+  m_SizeDelta: {x: 0, y: -208.49242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348691541
 MonoBehaviour:
@@ -714,6 +718,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 575aa29c301a1694ca2b395aa5ed2c32, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 575aa29c301a1694ca2b395aa5ed2c32, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_2
@@ -787,6 +795,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 046396f0a03c92349af26b5da85c91a5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 046396f0a03c92349af26b5da85c91a5, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_1 (1)
@@ -875,11 +887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 83.88
+      value: 43.203
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 37.834
+      value: 112.03
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -907,11 +919,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 3db57015f1adad14ca08e536f6426c0c, type: 3}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.b
-      value: 0.48490566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.g
-      value: 0.95960045
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.r
@@ -1049,11 +1061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -83.8811
+      value: 43.204
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000076293945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1080,12 +1092,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5ef8358eabf9c3940940f8dfa4755876, type: 3}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.g
-      value: 0.7019608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.r
-      value: 0.36862746
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_PreserveAspect
@@ -1312,7 +1328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 82.127
+      value: -44.898
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1344,7 +1360,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: a10f0f5abf29d264bbcedaf5a7161b93, type: 3}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.b
-      value: 0.67358494
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.g
@@ -1352,7 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.r
-      value: 0.67358494
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_PreserveAspect
@@ -1486,6 +1502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3d960265064f5d745b61836555a97d92, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 3d960265064f5d745b61836555a97d92, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_4
@@ -1930,6 +1950,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3d960265064f5d745b61836555a97d92, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 3d960265064f5d745b61836555a97d92, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_4 (1)
@@ -2490,8 +2514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 72.91498, y: 0}
-  m_SizeDelta: {x: -145.83, y: 0}
+  m_AnchoredPosition: {x: 72.91498, y: 37.09914}
+  m_SizeDelta: {x: -145.83, y: 74.19829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532384418
 MonoBehaviour:
@@ -2724,6 +2748,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1d9abe0ca486d3d4495dc4248da91dc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d9abe0ca486d3d4495dc4248da91dc1, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_3 (1)
@@ -2881,8 +2909,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -72.974, y: 0}
-  m_SizeDelta: {x: -145.95, y: 0}
+  m_AnchoredPosition: {x: -72.974, y: 36.710953}
+  m_SizeDelta: {x: -145.95, y: 73.42191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716617791
 MonoBehaviour:
@@ -3131,6 +3159,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1d9abe0ca486d3d4495dc4248da91dc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d9abe0ca486d3d4495dc4248da91dc1, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_3
@@ -3363,6 +3395,102 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71583188f4ec2714c96b62abfef4c406, type: 3}
+--- !u!1 &1938829067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938829071}
+  - component: {fileID: 1938829070}
+  - component: {fileID: 1938829069}
+  - component: {fileID: 1938829068}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1938829068
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938829067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1938829069
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938829067}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ac70ad42382936c4e9b7393e79d85233, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1938829070
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938829067}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1938829071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938829067}
+  m_LocalRotation: {x: -0, y: -0.7452468, z: 0.66678876, w: 0}
+  m_LocalPosition: {x: 0, y: 6.3, z: 15.32}
+  m_LocalScale: {x: 4.935932, y: 1.2075675, z: 2.6584597}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 96.36099, y: 0, z: 180}
 --- !u!1 &1954134425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,6 +3730,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 575aa29c301a1694ca2b395aa5ed2c32, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db76ea95f7d47cc4a86b8a2b38a77341, type: 2}
     - target: {fileID: 919132149155446097, guid: 575aa29c301a1694ca2b395aa5ed2c32, type: 3}
       propertyPath: m_Name
       value: CastilloDerrumbado_2 (1)
@@ -3893,11 +4025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -82.128
+      value: -44.897
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 34.451
+      value: 107.87
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428368, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3929,11 +4061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.b
-      value: 0.3622641
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.g
-      value: 0.5548353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7611049870578428370, guid: 3cf9d9c363a326549899d775d539ea59, type: 3}
       propertyPath: m_Color.r
