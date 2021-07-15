@@ -35,7 +35,7 @@ public class Floor : MonoBehaviour
             lives = lives - 1; //lose hp/points
             if (lives <= 0) gameFlowManager.DefeatEvent();
             //feedback/animation/sound
-            livesVisualizer.RecalculateVisualizer(lives);
+            livesVisualizer.RecalculateVisualizer(Mathf.Max(0,lives));
 
             enemiesManager.DeleteOneEnemy(e);
         }
